@@ -16,8 +16,31 @@ A plethora of malicious tools, ranging from classic computer viruses to Internet
 and bot networks, targets computer systems linked to the Internet. Proliferation of this
 threat is driven by a criminal industry which systematically comprises networked hosts
 for illegal purposes, such as distribution of spam messages or gathering of confidential
-data.  (reference rising criminal industry numbers here)
+data.  (
+Today it has gone
+mainstream, with creators selling their
+products to a broad and eager customer base
+that ranges from nation states to hacktivists.
+Luckily, most malware variants are known —
+meaning the majority of attacks can be blocked
+with appropriate safeguards in place.
+Malware: 90% of U.S. organizations had at
+least one malware-related incident during
+the past 12 months3.
+Ransomware: 63% of organizations were
+confronted with at least one ransomware
+incident over the past 12 months4.
+
+reference rising criminal industry numbers here)
+https://www.business.att.com/content/dam/attbusiness/reports/vol4-threatlandscape.pdf
+https://www.business.att.com/content/dam/attbusiness/infographics/the-cybersecurity-disconnect-infographic.pdf
+https://www.business.att.com/content/dam/attbusiness/infographics/cdn-zero-trust-security-model-infographic.pdf
+
 https://www.slideshare.net/CiscoSecurity/malware-infographic-48723818
+https://www.kaspersky.com/resource-center/infographics/vulnerable-software
+https://www.symantec.com/blogs/feature-stories/cyber-security-predictions-2019-and-beyond
+https://www.carbonblack.com/wp-content/uploads/2018/01/cb-threat-report-infographic-2017.pdf
+
 
 The increasing amount
 and diversity of malware render classic security techniques, such as anti-virus scanners,
