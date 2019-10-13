@@ -66,16 +66,15 @@ _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
-
 Steps
-1.Prepare training set and test set for malware and benign respectively
-2.Select features from datasets, and convert them to feature vectors
-  •Basically, the task of expert about applied field
-  •Select features based on each own experience and knowledge
-  •Extracted API calls log recorded by Cuckoo Sandbox
-3.Train by feature vectors added label(malware or benign)
-4.Classify the test set by extracting FV from them
-  • Keras for machine learning framework
+-1.Prepare training set and test set for malware and benign respectively
+-2.Select features from datasets, and convert them to feature vectors
+-  •Basically, the task of expert about applied field
+-  •Select features based on each own experience and knowledge
+-  •Extracted API calls log recorded by Cuckoo Sandbox
+-3.Train by feature vectors added label(malware or benign)
+-4.Classify the test set by extracting FV from them
+-   Keras for machine learning framework
 -----------
 
 **Before submitting your proposal, ask yourself. . .**
