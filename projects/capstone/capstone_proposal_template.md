@@ -37,9 +37,7 @@ _(approx. 2-3 paragraphs)_
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
 
-Malware is the raw-material associated with many cybercrime-related activities. Cuckoo is a lightweight solution that performs automated dynamic analysis of provided Windows binaries. It is able to return comprehensive reports on key API calls and network activity.
-Each analysis is launched in a fresh and isolated virtual or physical machine. The main components of Cuckoo’s infrastructure are an Host machine (the management software) and a number of Guest machines (virtual or physical machines for analysis).
-The Host runs the core component of the sandbox that manages the whole analysis process, while the Guests are the isolated environments where the malware samples get actually safely executed and analyzed.
+The dataset provided by ..  includes ....  The training set contains more than ....  The testing set contains.   ...
 
 
 ### Solution Statement
@@ -47,22 +45,10 @@ _(approx. 1 paragraph)_
 
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
-Incremental analysis of malware behavior. By combining clustering and classification,
-we devise an incremental approach to behavior-based analysis capable of processing
-the behavior of thousands of malware binaries on a daily basis. This incremental
-analysis significantly reduces the run-time and memory overhead of batch analysis
-methods, while providing accurate discovery of novel malware.
+The solution is classification models capable of predicting the families that the malware belongs too.  
 
 
-Steps
-1.Prepare training set and test set for malware and benign respectively
-2.Select features from datasets, and convert them to feature vectors
-  •Basically, the task of expert about applied field
-  •Select features based on each own experience and knowledge
-  •Extracted API calls log recorded by Cuckoo Sandbox
-3.Train by feature vectors added label(malware or benign)
-4.Classify the test set by extracting FV from them
-  • Keras for machine learning framework
+
 
 
 ### Benchmark Model
@@ -80,6 +66,16 @@ _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
+
+Steps
+1.Prepare training set and test set for malware and benign respectively
+2.Select features from datasets, and convert them to feature vectors
+  •Basically, the task of expert about applied field
+  •Select features based on each own experience and knowledge
+  •Extracted API calls log recorded by Cuckoo Sandbox
+3.Train by feature vectors added label(malware or benign)
+4.Classify the test set by extracting FV from them
+  • Keras for machine learning framework
 -----------
 
 **Before submitting your proposal, ask yourself. . .**
