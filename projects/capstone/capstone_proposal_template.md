@@ -11,46 +11,12 @@ _(approx. 1-2 paragraphs)_
 
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
-Malicious software, referred to as malware, is one of the major threats on the Internet today.
-A plethora of malicious tools, ranging from classic computer viruses to Internet worms
-and bot networks, targets computer systems linked to the Internet. Proliferation of this
-threat is driven by a criminal industry which systematically comprises networked hosts
-for illegal purposes, such as distribution of spam messages or gathering of confidential
-data.  (
-Today it has gone
-mainstream, with creators selling their
-products to a broad and eager customer base
-that ranges from nation states to hacktivists.
-Luckily, most malware variants are known —
-meaning the majority of attacks can be blocked
-with appropriate safeguards in place.
-Malware: 90% of U.S. organizations had at
-least one malware-related incident during
-the past 12 months3.
-Ransomware: 63% of organizations were
-confronted with at least one ransomware
-incident over the past 12 months4.
+Malicious software, referred to as malware, has become one of the major threats on the Internet today and has gone mainstream. The 2019 McAfee report https://www.mcafee.com/enterprise/en-us/assets/reports/rp-quarterly-threats-aug-2019.pdf confirms ransomware incidents increased by 118 percent during the first quarter of 2019, and the FBI recently as October 2nd, 2019 issued a high-impact alert in the increase in ransomware attacks across all sectors, state and local governments, and other infrastructure targets. https://www.ic3.gov/media/2019/191002.aspx. A plethora of malicious tools, ranging from classic computer viruses to Internet worms and bot networks, targets computer systems linked to the Internet and wireless networks. Gartner predicts 20.4 billion devices will be installed on the internet by 2020, producing a poliferation of targets for large and well-organized criminal market which systematically comprises computers and mobile devices for illegal purposes. The stakes around cybersecurity continue to rise and Human security analysts take 30 minutes to triage each detected threat. 
 
-reference rising criminal industry numbers here)
-https://www.business.att.com/content/dam/attbusiness/reports/vol4-threatlandscape.pdf
-https://www.business.att.com/content/dam/attbusiness/infographics/the-cybersecurity-disconnect-infographic.pdf
-https://www.business.att.com/content/dam/attbusiness/infographics/cdn-zero-trust-security-model-infographic.pdf
+Malware which ranges from viruses to worms, to ransomware which is a form a malware that encrypts files on a victim's computer, or mobile device making them unusable request payment from the victim to get their data back, distribution of phishing, or spam messages or gathering of confidential data inflicting millions in financial loss and to enterprises of all types, business users, and consumer users desktop and mobile.  Malware looms as a primary feature of the threat landscape and according to the recent AT&T Cybersecurity Insights report, vol 6,  https://www.business.att.com/content/dam/attbusiness/reports/cybersecurity-report-v6.pdf, malware is perceived as the top threat. And malware is often only the precursor to an attack, not the ultimate objective. Initial intrusion leads to more sophisticated and stealthy techniques, such as “living off the land” tradecraft that uses legitimate tools already present on the target system to accomplish adversary objectives. 
 
-https://www.slideshare.net/CiscoSecurity/malware-infographic-48723818
-https://www.kaspersky.com/resource-center/infographics/vulnerable-software
-https://www.symantec.com/blogs/feature-stories/cyber-security-predictions-2019-and-beyond
-https://www.carbonblack.com/wp-content/uploads/2018/01/cb-threat-report-infographic-2017.pdf
-
-
-The increasing amount
-and diversity of malware render classic security techniques, such as anti-virus scanners,
-ineffective and, as a consequence, millions of hosts in the Internet are currently infected
-with malicious software
-(reference rising criminal industry numbers here)
-Type of malware
-https://www.google.com/search?rlz=1C1CHBF_enUS782US782&biw=1536&bih=807&tbm=isch&sxsrf=ACYBGNTbi9KWmMnUhuYRqK8BKDVg9vflKA%3A1570767009452&sa=1&ei=oQCgXbOhG4_v_Qb7qrTgDA&q=malware+infographic&oq=malware+infog&gs_l=img.3.0.0l2.20162.23345..25164...2.0..0.84.1017.15......0....1..gws-wiz-img.......0i67j0i10j0i30j0i8i30j0i24.UhQKNMOcSuk#imgrc=RZLM1xGwb1_2qM:
-
-The stakes around cybersecurity continue to rise in a world of devices, cloud technology, and growing networks. Because of this, AI is being applied to previously unsolvable problems within the areas of cyber defense and cyber resilience. Human security analysts take 30 minutes to triage each detected threat. Security breaches can to go undetected for months or years. AI and deep learning provide ways to keep citizens
+The malware that runs on the computer systems each have a particular "behavoir" which are grouped together and  belong to the same malware “family”, had have the same forms of malicious behavior.  In order to evade detection, the creators of the malware introduce polymorphism to the malicious components, and are using innovative techniques. This means that malicious files are constantly modified and/or obfuscated using various tactics, changing the behavoir to evade detection, with a constantly increasing amount of files and malware families.  This diversity of malware renders classic security techniques, such as anti-virus scanners, ineffective and, as a consequence, millions of computers and devices connected to the Internet are currently infected with malicious software. 
+A first step in effectively analyzing and classifying such a large number of files is to group them and identify their respective families.  Anti-malware vendors to use this grouping criteria is used as a way to detect the malicious behavoirs and develop counter-mechanisms for finding and them.  Machine learning can be applied as a countermeasure against malware.
 
 My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development and Datacenter enterprise networking and automation that enables business processes, transforms networks and provides operations automation.
 
