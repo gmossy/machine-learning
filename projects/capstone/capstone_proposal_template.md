@@ -3,7 +3,7 @@
 Glenn Mossy 
 October 11, 2019
 
-## Proposal - Automatic Malware Analysis using Machine Learning 
+## Proposal - A Machine Learning based malware detector
 _(approx. 2-3 pages)_
 
 ### Domain Background
@@ -27,7 +27,7 @@ In this section, clearly describe the problem that is to be solved. The problem 
 
 Many anti-malware defensive solutions have failed to detect the unknown malware since most of them rely on signature-based technique. This technique can detect a malware based on a pre-defined signature, which achieves poor performance when attempting to classify unseen malware that constantly evade detection using various code obfuscation techniques. 
 
-The goal is to build a model that predicts ...
+The goal is to build a malware machine learning based detection model that accurately predicts types of malware...
 This model would help apply automated detection methods faster and with greater accuracy.
 
 
@@ -36,8 +36,9 @@ This model would help apply automated detection methods faster and with greater 
 _(approx. 2-3 paragraphs)_
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+The dataset is from virustotal.com and 1,419 sample binaries as a sample dataset, that consists of 991 benignware samples and 428 malware samples. The malware samples are representative of the kind of malware observered on the internet in 2017 and the benignware samples of what was uploaded to virustotal.com in 2017. 
 
-The dataset provided by ..  includes ....  The training set contains more than ....  The testing set contains.   ...
+This set will be divided into training sets of .... and testing sets of.... 
 
 
 ### Solution Statement
@@ -46,7 +47,7 @@ _(approx. 1 paragraph)_
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
 The solution is classification models capable of predicting the families that the malware belongs too.  
-
+The solution will be a malware detector. 
 
 
 
@@ -59,7 +60,23 @@ In this section, provide the details for a benchmark model or result that relate
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if '[applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+
+One useful metric for evaluating the accuracy of a binary predictor is call the area under the curve (AUC).  The curve refers to a Recievier Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive  on the y-axis for all possible thresholds. So this ROC metric will be used to determine our detector's accuracy. 
+
+For example, our model tries to predict whether a file is malicious by using a score between 0 (benign) and 1 (malicious).  If we choose a relitively high score threshold to classify a file as malicious we'll get fewer false-positives which is good, but also fewer true-positives which is bad.  On the other hand, if we choose a low score threshold, we'll likely have a high false-positive rate which is bad, but a very high detection rate which is good. 
+The sample possiblities will be represented as two points on our models ROC curve, with the first located on the left side and curve and the second near the right side.   We calculate the area under the curve and that will represent the predictive capablity and show the detectors accuracy.
+
+So the ROC curve will measure the changes in the detector's true positive rate (the percentage of malware that it successfully detects) and the false positive rate, ( the percentage of benignware that it falsely flags as malware as the sensitivity is adjusted.  The higher the sensitivity, we will have more false positives, but a greater detection rate. 
+The detector will output a threat score such that the higher it's value the more likely that the file is malicious.  
+Sklearns implementations of decision trees, logistic regression, k-nearest neighbors, random forest and other approaches all provide the option of computing a threat score to reflect whether a file is malware or benighware.
+
+
+
+
+
+
+
 
 ### Project Design
 _(approx. 1 page)_
