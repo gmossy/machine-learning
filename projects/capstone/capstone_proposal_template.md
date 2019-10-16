@@ -75,6 +75,8 @@ So the ROC curve will measure the changes in the detector's true positive rate (
 The detector will output a threat score such that the higher it's value the more likely that the file is malicious.  
 Sklearns implementations of decision trees, logistic regression, k-nearest neighbors, random forest and other approaches all provide the option of computing a threat score to reflect whether a file is malware or benighware.
 
+I would expect the model to be able to achieve between %90 - %95 detection rate which will be shown with an ROC curve. 
+
 ### Project Design
 _(approx. 1 page)_
 
@@ -82,14 +84,15 @@ In this final section, summarize a theoretical workflow for approaching a soluti
 
 Steps
 -1.Prepare training set and test set for malware and benign respectively
--2.Select features from datasets, and convert them to feature vectors
--  •Basically, the task of expert about applied field
--  •Select features based on each own experience and knowledge
--  •Extracted API calls log recorded by Cuckoo Sandbox
--3.Train by feature vectors added label(malware or benign)
--4.Classify the test set by extracting FV from them
--   Keras for machine learning framework
------------
+-2.Select features (which will be the printable strings) from datasets, and convert them to feature vectors
+-3.Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
+-4.Create a generator to break the data to be trained into batches. 
+-5.Explore my data.
+-6.Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier. 
+-7.Split the data into Training and Test sets. 
+-8.Train the data and valildate then and create and save the best model.
+-9.Score and compute and ROC Curve.
+-8.Use Test data to evaluate the performance with a ROC curve. 
 
 **Before submitting your proposal, ask yourself. . .**
 
