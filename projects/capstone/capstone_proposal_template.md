@@ -27,23 +27,19 @@ In this section, clearly describe the problem that is to be solved. The problem 
 
 Many anti-malware defensive solutions have failed to detect the unknown malware since most of them rely on signature-based technique. This technique can detect a malware based on a pre-defined signature, which achieves poor performance when attempting to classify unseen malware that constantly evade detection using various code obfuscation techniques. 
 
-The goal is to build a malware machine learning based detection model that accurately predicts types of malware...
-This model would help apply automated detection methods faster and with greater accuracy.
-
-I propose an innovative method for detecting malware which uses combined features to classify whether a PE file is malicious or benign. We split the approaches into stages. 
-
+The goal is to build a malware supervised machine learning neural network based detection model that accurately predicts types of malware using static analysis.  Where the strings descriptors from the binaries are used as the features in the model, and the model is trained on the malware (labeled 1) and the beignware (labeled 0).  
+This model would help apply automated detection methods faster and with greater accuracy and can be optimized in a number of ways for detection accuracy.  
 
 ### Datasets and Inputs
 _(approx. 2-3 paragraphs)_
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+
 The dataset is from virustotal.com and 1,419 sample binaries as a sample dataset, that consists of 991 (clean) benignware samples and 428 malware samples. The malware samples are representative of the kind of malware observered on the internet in 2017 and the benignware samples of what was uploaded to virustotal.com in 2017. 
-I will obtain additional datasets, but this will be the starting dataset.
+A binary program file contains "strings" that can be extracted and these will provided the features for the model that will be trained on.  The string features will be assigned into the categories of beignware (0) or malware (1). These features will tokenized as the features. 
+I will obtain additional datasets, but this will be the starting dataset, and then I will obtain additional datasets and add to this.
 
-The dataset will be automatically divided into 3 subsets:
-
-This set will be divided into:
-
+The dataset will be divided into 3 subsets:
         A training set, with 70% of the samples, used for training.
         A validation set, with 15% of the samples, used to benchmark the model at each training epoch.
         A test set, with 15% of the samples, used to benchmark the model after training.
@@ -53,40 +49,31 @@ _(approx. 1 paragraph)_
 
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
-By applying Machine learning based malware detectors will provide the understanding of whath the threat does, grouping all what the threats have in common, learning over time for new behaviors,  local learning and context.
-The solution is to build a neural network models capable of predicting the families that the malware belongs too.  
+By applying Machine learning based a malware detectors will provide the understanding of what the threat does, grouping all what the threats have in common, learning over time for new behaviors, local learning and context.
+
 The solution will be to create a malware detector, prove the effectiveness of our model and show that our method is able to detect unknown malicious samples well.
-First, Static inforamation will be extracted of PE file: printable strings, opcodes, import tables, informational entropy  and byte n-grams. We extract some basic features using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by CNN.  Finally, we train and classify the images using designed model based on CNN.
-
-
-A experimental work on malware collections will be done to make comparisons with the results of the performances of different machine learning models.
-
+First, Static information will be extracted of PE file: printable strings, opcodes, import tables, informational entropy and byte n-grams. We extract some basic features using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN.  Different machine learning models may be used to improve the performance of the detector. 
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
 
 In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
 
+One useful metric for evaluating the accuracy of a binary predictor is call the area under the curve (AUC).  The curve refers to a Recievier Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive  on the y-axis for all possible thresholds. So this ROC metric will be used to determine our detector's accuracy.   Accuracy metrics in research papers have shown various advanced techniques that achieve and AUC of typically 90% - 95%, but advanced methods using combined static and dynamic analysis with RNN's and CNN's have achieved a 97% detection rate positive for malware.
+
+
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
 
 In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if '[applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
-One useful metric for evaluating the accuracy of a binary predictor is call the area under the curve (AUC).  The curve refers to a Recievier Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive  on the y-axis for all possible thresholds. So this ROC metric will be used to determine our detector's accuracy. 
-
-For example, our model tries to predict whether a file is malicious by using a score between 0 (benign) and 1 (malicious).  If we choose a relitively high score threshold to classify a file as malicious we'll get fewer false-positives which is good, but also fewer true-positives which is bad.  On the other hand, if we choose a low score threshold, we'll likely have a high false-positive rate which is bad, but a very high detection rate which is good. 
+The metric for evaluating the accuracy of a binary predictor that will be used is called the area under the curve (AUC) and refers to a Recievier Operating Characteristic (ROC) curve. 
+Our model will try to predict whether a file is malicious by using a score between 0 (benign) and 1 (malicious).  If we choose a relitively high score threshold to classify a file as malicious we'll get fewer false-positives which is good, but also fewer true-positives which is bad.  On the other hand, if we choose a low score threshold, we'll likely have a high false-positive rate which is bad, but a very high detection rate which is good. 
 The sample possiblities will be represented as two points on our models ROC curve, with the first located on the left side and curve and the second near the right side.   We calculate the area under the curve and that will represent the predictive capablity and show the detectors accuracy.
 
 So the ROC curve will measure the changes in the detector's true positive rate (the percentage of malware that it successfully detects) and the false positive rate, ( the percentage of benignware that it falsely flags as malware as the sensitivity is adjusted.  The higher the sensitivity, we will have more false positives, but a greater detection rate. 
 The detector will output a threat score such that the higher it's value the more likely that the file is malicious.  
 Sklearns implementations of decision trees, logistic regression, k-nearest neighbors, random forest and other approaches all provide the option of computing a threat score to reflect whether a file is malware or benighware.
-
-
-
-
-
-
-
 
 ### Project Design
 _(approx. 1 page)_
