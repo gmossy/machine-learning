@@ -51,14 +51,18 @@ _(approx. 1 paragraph)_
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
 The solution will be to create a malware detector, prove the effectiveness of our model and show that our method is able to detect unknown malicious samples well.
-First, Static information will be extracted of PE file: printable strings, opcodes, import tables, informational entropy and byte n-grams. We extract some basic features using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN.  Different machine learning models may be used to improve the performance of the detector. 
+First, Static information will be extracted of PE file: printable strings, opcodes, import tables, informational entropy and byte n-grams. We extract some basic features using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN. 
+
+The solution attempts to detect malicious web content by manually extracting features from HTML and Javascript, then feeds
+this information to machine learning algorithms.  The solution will try several combinations of features and learning algorithms and
+compare their relative merits.  Different machine learning models may be used to improve the performance of the detector. 
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
 
 In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
 
-One useful metric for evaluating the accuracy of a binary predictor is called the area under the curve (AUC).  The curve refers to a Receiver Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive  on the y-axis for all possible thresholds. This ROC metric will be used to determine our detector's accuracy.  Accuracy metrics in research papers have shown various advanced techniques that achieve an AUC of typically 90% - 95% accuracy rates, but advanced methods using combined static and dynamic analysis with RNN's and CNN's have achieved an even higher 97% detection rate positive for malware.
+One useful metric for evaluating the accuracy of a binary predictor is called the area under the curve (AUC).  The curve refers to a Receiver Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive  on the y-axis for all possible thresholds. This ROC metric will be used to determine our detector's accuracy.  Accuracy metrics in research papers have shown various advanced techniques that achieve an AUC of typically 90% - 95% accuracy rates, but advanced methods using combined static and dynamic analysis have achieved an even higher 97% detection rate positive for malware.
 
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
