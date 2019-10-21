@@ -84,7 +84,7 @@ _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
-Steps
+The workflow for the solution is as follows:
 -1.Prepare training set and test set for malware and benign respectively
 -2.Select features (which will be the printable strings) from datasets, and convert them to feature vectors
 -3.Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
@@ -106,10 +106,15 @@ spelling mistakes?
 - Are all the resources used for this project correctly cited and referenced?
 
 References:
-[1]
-https://www.ffri.jp/assets/files/monthly_research/MR201306_Machine_learning_for_computer_security_ENG.pdf
+[1] A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by Joshua Saxe1, Richard Harang, Cody Wild, Hillary Sanders
+https://arxiv.org/pdf/1804.05020.pdf
 
 [2]
+https://www.ffri.jp/assets/files/monthly_research/MR201306_Machine_learning_for_computer_security_ENG.pdf
+
+[3]
 http://www.mlsec.org/malheur/docs/malheur-jcs.pdf
+
+
 
 
