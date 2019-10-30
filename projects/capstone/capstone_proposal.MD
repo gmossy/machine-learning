@@ -61,16 +61,16 @@ _(approx. 1 page)_
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
 The workflow for the solution is as follows:
--1.Prepare training set and test set for malware and benign respectively
--2.Select features (which will be the printable strings) from datasets, and convert them to feature vectors
--3.Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
--4.Create a generator to break the data to be trained into batches. 
--5.Explore my data.
--6.Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier. 
--7.Split the data into Training and Test sets. 
--8.Train the data and valildate then and create and save the best model.
--9.Score and compute and ROC Curve.
--8.Use Test data to evaluate the performance with a ROC curve. 
+1. Prepare training set and test set for malware and benign respectively
+2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
+3. Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
+4. Create a generator to break the data to be trained into batches. 
+5. Explore my data.
+6. Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier. 
+7. Split the data into Training and Test sets. 
+8. Train the data and valildate then and create and save the best model.
+9. Score and compute and ROC Curve.
+10. Use Test data to evaluate the performance with a ROC curve. 
 
 **Before submitting your proposal, ask yourself. . .**
 
