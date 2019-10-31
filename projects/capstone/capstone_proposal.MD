@@ -24,8 +24,10 @@ The goal is to build a malware supervised machine learning neural network based 
 This model would help apply automated detection faster and with greater accuracy and can be optimized in a number of ways for detection accuracy. An ideal model would give detection rates for malware in which we can quality it's effectiveness by measuring the ability in achieving a low false positive rate (FPR).  
 
 ### Datasets and Inputs 
-The dataset is from virustotal.com and 1,419 sample binaries as a sample dataset, which consists of 991 (clean) beignware samples and 428 malware samples. The malware samples are representative of the kind of malware observed on the internet in 2017 and the beignware samples of what was uploaded to virustotal.com in 2017. 
-A binary program file contains "strings" that can be extracted and these will provided the features for the model that will be trained on.  The string features will be assigned into the categories of beignware (0) or malware (1). These features will tokenized as the features. 
+There will be two different datasets having different sizes and distributions of benign and malicious executables. The first dataset is from virustotal.com and total of 1,419 sample binaries as a sample dataset consisting of 991 (clean) beignware samples and 428 malware samples.  The malware samples will be representative of the kind of malware observed on the internet in 2017 and the beignware samples of what was uploaded to virustotal.com in 2017. 
+A binary program file contains "strings" that can be extracted and these will allow for collection of the features for the model that will be trained on. These strings can also be called  "n-grams features" (e.g. html, javascript, binary, assembly, DLL) 
+The string features will be assigned into the categories of beignware (0) or malware (1). These features will tokenized as the features using the techniques explained in the solution statement.
+
 I will obtain additional datasets, but this will be the starting dataset, and then I will obtain additional datasets and add to this.
 The dataset will be divided into 3 subsets:
         A training set, with 70% of the samples, used for training.
@@ -33,12 +35,14 @@ The dataset will be divided into 3 subsets:
         A test set, with 15% of the samples, used to benchmark the model after training.
 
 ### Solution Statement
-The solution will be to create a malware detector, prove the effectiveness of our model and show that our method is able to detect unknown malicious samples well.
-First, Static information will be extracted of PE file: printable strings, opcodes, import tables, informational entropy and byte n-grams. We extract some basic features using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN. 
+Although signature based detection techniques are being used widely, they are not effective against “zero-day attacks”
+and various “obfuscation” techniques. Signature based techniques are also hopeless against new attacks. So, there
+is a growing need for fast, automated, and efficient detection techniques that can also detect new attacks.
 
-The solution attempts to detect malicious web content by manually extracting features from HTML and JavaScript, then feeds
-this information to machine learning algorithms.  The solution will try several combinations of features and learning algorithms and
-compare their relative merits.  Different machine learning models may be used to improve the performance of the detector. 
+The solution presented in this paper will be to create an offline malware detector, then prove the effectiveness of our model and show that our method is able to detect unknown malicious samples to a good degree of accuracy. Offline detection means that this method cannot be directly deployed on a network to detect malicious code in real time. 
+First, Static information will be extracted of the PE, html, or script files: printable strings, opcodes, import tables, informational entropy and byte n-grams (i.e., n consecutive bytes). These basic features will be extracted using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN. 
+
+The solution attempts to detect malicious web content by manually extracting and collecting the features from HTML and JavaScript, then feeds this information to machine learning algorithms.  The solution will try several combinations of features and learning algorithms and compares their relative merits.  Different machine learning models may be used to improve the performance of the detector. 
 
 ### Benchmark Model
 One useful metric for evaluating the accuracy of a binary predictor is called the area under the curve (AUC).  The curve refers to a Receiver Operating Characteristic (ROC) curve, which plots false-positive rates on the x-axis against true-positive on the y-axis for all possible thresholds. This ROC metric will be used to determine our detector's accuracy.  Accuracy metrics in research papers have shown various advanced techniques that achieve an AUC of typically 90% - 95% accuracy rates, but advanced methods using combined static and dynamic analysis have achieved an even higher 97% detection rate positive for malware.
@@ -61,13 +65,16 @@ The workflow for the solution is as follows:
 1. Prepare training set and test set for malware and benign respectively
 2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
 3. Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
-4. Create a generator to break the data to be trained into batches. 
-5. Explore my data.
-6. Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier. 
-7. Split the data into Training and Test sets. 
-8. Train the data and validate then and create and save the best model.
-9. Score and compute and ROC Curve.
-10. Use Test data to evaluate the performance with a ROC curve. 
+4. Collect all the features. 
+5. Create a generator to break the data to be trained into batches. 
+6. The feature vectors will be computed cooresponding to the feature set.
+7. Explore my data to show the distribution information of the dataset.
+8. Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier or SVM.   
+9. Split the data into Training and Test sets. 
+10. Train the data and validate then and create and save the best model.
+11. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false
+negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
+12. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. Finally, use the Test data results to evaluate the performance with a ROC curve. 
 
 **Before submitting your proposal, ask yourself. . .**
 
@@ -85,7 +92,7 @@ spelling mistakes?
 
 [3] http://www.mlsec.org/malheur/docs/malheur-jcs.pdf
 [4] https://media.kaspersky.com/en/enterprise-security/Kaspersky-Lab-Whitepaper-Machine-Learning.pdf
-
+[5] Mohammad M Masud, Latifur Khan, Bhavani Thuraisingham, https://personal.utdallas.edu/~bxt043000/Publications/Conference-Papers/DAS/C82_A_Hybrid_Model_to_Detect_Malicious_Executables.pdf
 
 
 
