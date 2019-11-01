@@ -61,6 +61,11 @@ _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
+ The solution will first process the datasets by mapping information in the files to "strings" that can be extracted and collected, and then features created for the strings, and the features will be processed by tokenizing, converted to vectors, and the data will be sorted into batches.  Exploratory analyis will be done on the datasets to understand if we can classify and group the malware into "families".  
+
+The solution then proposes a convolutional neural network designed to take a byte sequence of nonexecutables as an input
+using collection of the features for the model to train on.  The solution will take test data and predict whether the given sequence has malicious actions or not. An evaluation of the prediction will be done to score the results.  It will be illustrated as to how design the network according to the characteristics of the input data and provide discussion about the experiments using the manually labelled dataset. The project's experimental results will attempt to show if the proposed network outperforms several representative machine-learning models with different settings. The approach may use only a certain type of files, but it is expected that this approach can be applicable to other types of data if they contain byte streams. 
+
 The workflow for the solution is as follows:
 1. Prepare training set and test set for malware and benign respectively
 2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
@@ -86,13 +91,19 @@ spelling mistakes?
 - Are all the resources used for this project correctly cited and referenced?
 
 **References:**
-[1] A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by Joshua Saxe1, Richard Harang, Cody Wild, Hillary Sanders  https://arxiv.org/pdf/1804.05020.pdf
+[1]   Saxe J., Harang R., Wild C., Sanders H., A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by  https://arxiv.org/pdf/1804.05020.pdf, arXiv:1804.05020v1 [cs.CR] 13 Apr 2018
 
-[2] https://www.ffri.jp/assets/files/monthly_research/MR201306_Machine_learning_for_computer_security_ENG.pdf
+[2]
 
-[3] http://www.mlsec.org/malheur/docs/malheur-jcs.pdf
-[4] https://media.kaspersky.com/en/enterprise-security/Kaspersky-Lab-Whitepaper-Machine-Learning.pdf
-[5] Mohammad M Masud, Latifur Khan, Bhavani Thuraisingham, https://personal.utdallas.edu/~bxt043000/Publications/Conference-Papers/DAS/C82_A_Hybrid_Model_to_Detect_Malicious_Executables.pdf
+[3] Rieck K., Trinius P., Willems C., and Holz T., Automatic Analysis of Malware Behavior using Machine Learning
+http://www.mlsec.org/malheur/docs/malheur-jcs.pdf, Journal of Computer Security, IOS Press, http://www.iospress.nl, 2011
 
+[4] Kaspersky lab, https://media.kaspersky.com/en/enterprise-security/Kaspersky-Lab-Whitepaper-Machine-Learning.pdf, 2019
 
+[5] Masud M.M., Khan L., Thuraisingham B., https://personal.utdallas.edu/~bxt043000/Publications/Conference-Papers/DAS/C82_A_Hybrid_Model_to_Detect_Malicious_Executables.pdf, IEEE Communications Society, 2007
 
+**Links**
+McAfee report https://www.mcafee.com/enterprise/en-us/assets/reports/rp-quarterly-threats-aug-2019.pdf, 2019 
+https://www.ic3.gov/media/2019/191002.aspx
+https://www.cnn.com/2019/10/08/business/ransomware-attacks-trnd/index.html
+https://www.business.att.com/content/dam/attbusiness/reports/cybersecurity-report-v6.pdf
