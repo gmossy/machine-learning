@@ -66,26 +66,17 @@ The workflow for the solution is as follows:
 4. Extract all the feature vectors. 
 5. Create a generator to break the data to be trained into batches. 
 #### Explore
- 7. Explore my data to show the distribution information of the dataset. Work will be done to classify the files into malware families
+6. Explore my data to show the distribution information of the dataset. Work will be done to classify the files into malware families
  using a classifier from sklearn such as DecisionTrees,RandomForestClassifier or SVM. 
  
 #### Train
-8. Decide on a classifier that will be used for the CNN.
-9. Split the data into Training and Test sets.
-10. Train the data and validate then and create and save the best model.
+7. Decide on a classifier that will be used for the CNN.
+8. Split the data into Training and Test sets.
+9. Train the data and validate then and create and save the best model.
 #### Test
-11. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. 
+10. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. 
 #### Evaluate
-12. Finally, use the Test data results to evaluate the performance with a ROC curve. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
-
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and
-spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+11. Finally, use the Test data results to evaluate the performance with a ROC curve. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
 
 **References:**
 [1] Saxe J., Harang R., Wild C., Sanders H., Malware Data Science, Attack Detection and Attribution, no starch press, 2018 
