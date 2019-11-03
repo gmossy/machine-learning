@@ -73,7 +73,7 @@ The workflow for the solution is as follows:
 11. Finally, use the Test data results to evaluate the performance with a ROC curve. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
 
 **References:**
-[1] Saxe J., Harang R., Wild C., Sanders H., Malware Data Science, Attack Detection and Attribution, no starch press, 2018 
+[1] Saxe J., Harang R., Wild C., Sanders H., Malware Data Science, Attack Detection and Attribution, https://www.malwaredatascience.com, no starch press, 2018 
 
 [2] Saxe J., Harang R., Wild C., Sanders H., A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by  https://arxiv.org/pdf/1804.05020.pdf, arXiv:1804.05020v1 [cs.CR] 13 Apr 2018
 
