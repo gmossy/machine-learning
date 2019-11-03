@@ -4,8 +4,6 @@ Glenn Mossy
 November 2, 2019
 
 ## Proposal - A Machine Learning based malware detector
-_(approx. 2-3 pages)_
-
 ### Domain Background
 Malware is vindictive programming and today the availability of malevolent code writing instruments makes it simple for anyone to assemble noxious code, and consequently, malware ranges classic computer viruses to worms, to ransomware to Internet worms and botnets have become one of the major threats on the Internet today. The 2019 McAfee report https://www.mcafee.com/enterprise/en-us/assets/reports/rp-quarterly-threats-aug-2019.pdf confirms ransomware incidents increased by 118 percent during the first quarter of 2019, and the FBI recently as October 2nd, 2019 issued a high-impact alert in the increase in ransomware attacks across all sectors, https://www.ic3.gov/media/2019/191002.aspx. According to cybersecurity firm Recorded Future, which tracks the attacks, from Jan to Oct of 2019, 140 local governments, police stations and hospitals have been held hostage by ransomware attacks https://www.cnn.com/2019/10/08/business/ransomware-attacks-trnd/index.html.  Also according to the recent AT&T Cybersecurity Insights report, vol 6, malware is perceived as the top threat, https://www.business.att.com/content/dam/attbusiness/reports/cybersecurity-report-v6.pdf.  
 In addition, Gartner predicts 20.4 billion devices will be installed on the internet by 2020, producing a proliferation of targets for a large and well-organized criminal market which systematically comprises all types of computers and mobile devices. Often, malware is only the precursor to an attack, not the ultimate objective. Initial intrusion leads to more sophisticated and stealthy techniques, such as “living off the land” tradecraft that uses legitimate tools already present on the target system to accomplish hostile objectives. 
@@ -16,7 +14,6 @@ The malware that runs on computers each have a particular "behavior" which are g
 A first step in effectively analyzing and classifying malware files is to group them and identify their respective families.  Anti-malware vendors to use this grouping criteria is used as a way to detect the malicious behaviors and develop counter-mechanisms for finding and them.  Machine learning can be applied as a countermeasure against malware to automate the detection because the stakes around cybersecurity continue to rise and human security analysts take an average of 30 minutes to triage each detected threat. So the challenge is around to apply automated detection methods faster with accuracy.
 
 My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development and Datacenter enterprise networking and automation that enables business processes, transforms networks and provides operations automation.
-
 
 ### Problem Statement
 Many anti-malware defensive solutions have failed to detect the unknown malware since most of them rely on signature-based technique. This technique can detect a malware based on a pre-defined signature, which achieves poor performance when attempting to classify unseen malware that constantly evade detection using various code obfuscation techniques. 
@@ -34,7 +31,6 @@ The dataset will be divided into 3 subsets:
         A test set, with 15% of the samples, used to benchmark the model after training.
 
 ### Solution Statement
-
 A challenge is to detect malware that has just been freshly released in the to wild of the internet, these are called "zero-day attacks".  Although signature based detection techniques are being used widely, they are not effective against “zero-day attacks” and various “obfuscation” techniques. Signature based techniques are also hopeless against new attacks. So, there is a growing need for fast, automated, and efficient detection techniques that can also detect zero-day attacks.
 
 The solution presented in this paper will be to create an offline or "static" malware detector, then prove the effectiveness of our model and show that our method is able to detect unknown malicious samples to a good degree of accuracy. Offline detection means that this method cannot be directly deployed on a network to detect malicious code in real time. 
@@ -47,12 +43,11 @@ One useful metric for evaluating the accuracy of a binary predictor is called th
 The metric for evaluating the accuracy of a binary predictor that will be used is called the area under the curve (AUC) and refers to a Receiver Operating Characteristic (ROC) curve. 
 Our model will try to predict whether a file is malicious by using a score between 0 (benign) and 1 (malicious).  If we choose a relatively high score threshold to classify a file as malicious we'll get fewer false-positives which is good, but also fewer true-positives which is bad.  On the other hand, if we choose a low score threshold, we'll likely have a high false-positive rate which is bad, but a very high detection rate which is good. 
 The sample possibilities will be represented as two points on our models ROC curve, with the first located on the left side and curve and the second near the right side.   We calculate the area under the curve and that will represent the predictive capability and show the detectors accuracy.
-So the ROC curve will measure the changes in the detector's true positive rate (the percentage of malware that it successfully detects) and the false positive rate, (the percentage of beignware that it falsely flags as malware as the sensitivity is adjusted.  The higher the sensitivity, we will have more false positives, but a greater detection rate.  I would expect the model to be able to achieve between 90% - 95% detection rate which will be shown with an ROC curve. 
+The ROC curve will measure the changes in the detector's true positive rate (the percentage of malware that it successfully detects) and the false positive rate, (the percentage of beignware that it falsely flags as malware as the sensitivity is adjusted.  The higher the sensitivity, we will have more false positives, but a greater detection rate.  I would expect the model to be able to achieve between 90% - 95% detection rate which will be shown with an ROC curve. 
 The detector will output a threat score such that the higher it's value the more likely that the file is malicious.  
 Sklearns implementations of decision trees, logistic regression, k-nearest neighbors, random forest and other approaches all provide the option of computing a threat score to reflect whether a file is malware or benignware.
 
 ### Project Design
-_(approx. 1 page)_
 The solution will first process the datasets by mapping information in the files to "strings" that can be extracted and collected, and then features created for the strings, and the feature vectors will be processed by tokenizing, and the data will be sorted into batches.  Exploratory analysis will be done on the datasets to understand if we can classify and group the malware into "families".  
 
 The solution then proposes a convolutional neural network designed to take a byte sequence of non-executables as an input using collection of the features for the model to train on. The solution will take test data and predict whether the given sequence has malicious actions or not. An evaluation of the prediction will be done to score the results.  It will be illustrated as to how design the network according to the characteristics of the input data and provide discussion about the experiments using the manually labelled dataset. The project's experimental results will attempt to show if the proposed network outperforms several representative machine-learning models with different settings. The approach may use only a certain type of files, but it is expected that this approach can be applicable to other types of data if they contain byte streams.
@@ -68,7 +63,6 @@ The workflow for the solution is as follows:
 #### Explore
 6. Explore my data to show the distribution information of the dataset. Work will be done to classify the files into malware families
  using a classifier from sklearn such as DecisionTrees,RandomForestClassifier or SVM. 
- 
 #### Train
 7. Decide on a classifier that will be used for the CNN.
 8. Split the data into Training and Test sets.
