@@ -60,21 +60,26 @@ The solution will first process the datasets by mapping information in the files
 
 The solution then proposes a convolutional neural network designed to take a byte sequence of non-executables as an input using collection of the features for the model to train on. The solution will take test data and predict whether the given sequence has malicious actions or not. An evaluation of the prediction will be done to score the results.  It will be illustrated as to how design the network according to the characteristics of the input data and provide discussion about the experiments using the manually labelled dataset. The project's experimental results will attempt to show if the proposed network outperforms several representative machine-learning models with different settings. The approach may use only a certain type of files, but it is expected that this approach can be applicable to other types of data if they contain byte streams.
 
-
 The workflow for the solution is as follows:
+# Collect
 1. Prepare training set and test set for malware and benign respectively
 2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
+# Extract
 3. Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
-4. Collect all the feature vectors. 
+4. Extract all the feature vectors. 
 5. Create a generator to break the data to be trained into batches. 
-6. The feature vectors will be computed cooresponding to the feature set.
-7. Explore my data to show the distribution information of the dataset.
-8. Decide on a classifier that will be used for the CNN, such as sklearn's RandomForestClassifier or SVM.   
-9. Split the data into Training and Test sets. 
+# Explore
+ 7. Explore my data to show the distribution information of the dataset. Work will be done to classify the files into malware families
+ using a classifier from sklearn such as DecisionTrees,RandomForestClassifier or SVM. 
+ 
+# Train
+8. Decide on a classifier that will be used for the CNN.
+9. Split the data into Training and Test sets.
 10. Train the data and validate then and create and save the best model.
-11. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false
-negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
-12. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. Finally, use the Test data results to evaluate the performance with a ROC curve. 
+# Test
+11. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. 
+# Evaluate
+12. Finally, use the Test data results to evaluate the performance with a ROC curve. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
 
 **Before submitting your proposal, ask yourself. . .**
 
