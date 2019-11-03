@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
 Glenn Mossy 
-October 29, 2019
+November 2, 2019
 
 ## Proposal - A Machine Learning based malware detector
 _(approx. 2-3 pages)_
