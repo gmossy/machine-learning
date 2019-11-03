@@ -25,8 +25,7 @@ This model would help apply automated detection faster and with greater accuracy
 
 ### Datasets and Inputs 
 There will be two different datasets having different sizes and distributions of benign and malicious files. The first dataset is from virustotal.com and total of 1,419 sample binaries as a sample dataset consisting of 991 (clean) beignware samples and 428 malware samples.  The malware samples will be representative of the kind of malware observed on the internet in 2017 and the beignware samples of what was uploaded to virustotal.com in 2017.  One unfortunate aspect of the field of malware detection is that there is no available public dataset for various reasons. The dataset easily obtainable from public is often not of a sufficient quality, so previous studies could not compare performance (i.e., accuracy) across works because of different data characteristics and labelling procedures. It is inevitably hard to compare our performance with other state-of-the-art studies for the same reason. We compare our network with some comparative machine-learning methods and CNN models with different settings. 
-A binary program file contains "strings" that can be extracted and these will allow for collection of the features for the model that will be trained on. These strings can also be called  "n-grams features" (e.g. html, javascript, binary, assembly, DLL) 
-The string features will be assigned into the categories of beignware (0) or malware (1). These features will tokenized as the features using the techniques explained in the solution statement.
+A binary program file contains "strings" that can be extracted and these will allow for collection of the features for the model that will be trained on. These strings can be called "feature vectors". "A feature vector is an n-dimensional vector that contains essential information that describes the characteristics of an object. For example, it can be an object’s numerical features or a list of numbers taken from the output of a neural network layer.  These feature vectors will be assigned into the categories of beignware (0) or malware (1). These features will tokenized as the features using the techniques explained in the solution statement.
 
 I will obtain additional datasets, but this will be the starting dataset, and then I will obtain additional datasets and add to this.
 The dataset will be divided into 3 subsets:
@@ -35,12 +34,11 @@ The dataset will be divided into 3 subsets:
         A test set, with 15% of the samples, used to benchmark the model after training.
 
 ### Solution Statement
-Although signature based detection techniques are being used widely, they are not effective against “zero-day attacks”
-and various “obfuscation” techniques. Signature based techniques are also hopeless against new attacks. So, there
-is a growing need for fast, automated, and efficient detection techniques that can also detect new attacks.
+
+A challenge is to detect malware that has just been freshly released in the to wild of the internet, these are called "zero-day attacks".  Although signature based detection techniques are being used widely, they are not effective against “zero-day attacks” and various “obfuscation” techniques. Signature based techniques are also hopeless against new attacks. So, there is a growing need for fast, automated, and efficient detection techniques that can also detect zero-day attacks.
 
 The solution presented in this paper will be to create an offline or "static" malware detector, then prove the effectiveness of our model and show that our method is able to detect unknown malicious samples to a good degree of accuracy. Offline detection means that this method cannot be directly deployed on a network to detect malicious code in real time. 
-First, Static information will be extracted of the PE, html, or script files: printable strings, opcodes, import tables, informational entropy and byte n-grams (i.e., n consecutive bytes). These basic features will be extracted using approaches which have been used in previously published works. The second stage records the strings extracted from the binary of the files and processes them by a CNN.  Finally, we train and classify the images using designed model based on CNN. 
+First, Static information will be extracted of the PE, html, or script files: printable strings, opcodes, import tables, informational entropy, byte n-grams (i.e., n consecutive bytes), or feature vectors. These basic features will be extracted using approaches which have been used in previously published works. The second stage records the feature vectors extracted from the binary of the files and prepares them to be processed by a convolutional neural network (CNN).  Finally, we train and classify the images using designed model based on CNN. 
 
 The solution attempts to detect malicious web content by manually extracting and collecting the features from HTML and JavaScript, then feeds this information to machine learning algorithms.  The solution will try several combinations of features and learning algorithms and compares their relative merits.  Different machine learning models may be used to improve the performance of the detector. 
 
@@ -61,7 +59,7 @@ _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
-The solution will first process the datasets by mapping information in the files to "strings" that can be extracted and collected, and then features created for the strings, and the features will be processed by tokenizing, converted to vectors, and the data will be sorted into batches.  Exploratory analysis will be done on the datasets to understand if we can classify and group the malware into "families".  
+The solution will first process the datasets by mapping information in the files to "strings" that can be extracted and collected, and then features created for the strings, and the features will be processed by tokenizing, converted to feature vectors, and the data will be sorted into batches.  Exploratory analysis will be done on the datasets to understand if we can classify and group the malware into "families".  
 
 The solution then proposes a convolutional neural network designed to take a byte sequence of non-executables as an input using collection of the features for the model to train on. The solution will take test data and predict whether the given sequence has malicious actions or not. An evaluation of the prediction will be done to score the results.  It will be illustrated as to how design the network according to the characteristics of the input data and provide discussion about the experiments using the manually labelled dataset. The project's experimental results will attempt to show if the proposed network outperforms several representative machine-learning models with different settings. The approach may use only a certain type of files, but it is expected that this approach can be applicable to other types of data if they contain byte streams.
 
@@ -70,7 +68,7 @@ The workflow for the solution is as follows:
 1. Prepare training set and test set for malware and benign respectively
 2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
 3. Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
-4. Collect all the features. 
+4. Collect all the feature vectors. 
 5. Create a generator to break the data to be trained into batches. 
 6. The feature vectors will be computed cooresponding to the feature set.
 7. Explore my data to show the distribution information of the dataset.
