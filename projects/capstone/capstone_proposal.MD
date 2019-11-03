@@ -53,9 +53,6 @@ Sklearns implementations of decision trees, logistic regression, k-nearest neigh
 
 ### Project Design
 _(approx. 1 page)_
-
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
-
 The solution will first process the datasets by mapping information in the files to "strings" that can be extracted and collected, and then features created for the strings, and the feature vectors will be processed by tokenizing, and the data will be sorted into batches.  Exploratory analysis will be done on the datasets to understand if we can classify and group the malware into "families".  
 
 The solution then proposes a convolutional neural network designed to take a byte sequence of non-executables as an input using collection of the features for the model to train on. The solution will take test data and predict whether the given sequence has malicious actions or not. An evaluation of the prediction will be done to score the results.  It will be illustrated as to how design the network according to the characteristics of the input data and provide discussion about the experiments using the manually labelled dataset. The project's experimental results will attempt to show if the proposed network outperforms several representative machine-learning models with different settings. The approach may use only a certain type of files, but it is expected that this approach can be applicable to other types of data if they contain byte streams.
@@ -91,9 +88,9 @@ spelling mistakes?
 - Are all the resources used for this project correctly cited and referenced?
 
 **References:**
-[1]   Saxe J., Harang R., Wild C., Sanders H., A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by  https://arxiv.org/pdf/1804.05020.pdf, arXiv:1804.05020v1 [cs.CR] 13 Apr 2018
+[1] Saxe J., Harang R., Wild C., Sanders H., Malware Data Science, Attack Detection and Attribution, no starch press, 2018 
 
-[2]
+[2] Saxe J., Harang R., Wild C., Sanders H., A Deep Learning Approach to Fast, Format-Agnostic Detection of Malicious Web Content by  https://arxiv.org/pdf/1804.05020.pdf, arXiv:1804.05020v1 [cs.CR] 13 Apr 2018
 
 [3] Rieck K., Trinius P., Willems C., and Holz T., Automatic Analysis of Malware Behavior using Machine Learning
 http://www.mlsec.org/malheur/docs/malheur-jcs.pdf, Journal of Computer Security, IOS Press, http://www.iospress.nl, 2011
@@ -101,6 +98,12 @@ http://www.mlsec.org/malheur/docs/malheur-jcs.pdf, Journal of Computer Security,
 [4] Kaspersky lab, https://media.kaspersky.com/en/enterprise-security/Kaspersky-Lab-Whitepaper-Machine-Learning.pdf, 2019
 
 [5] Masud M.M., Khan L., Thuraisingham B., https://personal.utdallas.edu/~bxt043000/Publications/Conference-Papers/DAS/C82_A_Hybrid_Model_to_Detect_Malicious_Executables.pdf, IEEE Communications Society, 2007
+
+[6]  Margaritelli S., https://www.evilsocket.net/2019/05/22/How-to-create-a-Malware-detection-system-with-Machine-Learning, 05-22-2019
+
+[7] Karthikeyan S.N., Jacob G., Manjunath B.S., 
+https://sarvamblog.blogspot.com/2014/08/supervised-classification-with-k-fold.html#!/2014/08/supervised-classification-with-k-fold.html
+https://vision.ece.ucsb.edu/sites/vision.ece.ucsb.edu/files/publications/nataraj_vizsec_2011_paper.pdf, VizSec 2011
 
 **Links**
 McAfee report https://www.mcafee.com/enterprise/en-us/assets/reports/rp-quarterly-threats-aug-2019.pdf, 2019 
