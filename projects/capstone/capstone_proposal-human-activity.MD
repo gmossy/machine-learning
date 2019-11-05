@@ -6,7 +6,12 @@ November 2, 2019
 ## Proposal - A Deep Learning Based Human Activity Recognizer.
 ### Domain Background
 Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]
-Human Activity Recognition has a very wide applications ranging from security-related
+
+Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment. Recognition can be accomplished by exploiting the information retrieved from various sources
+such as body-worn sensors.
+ 
+
+Human Activity Recognition have a very wide applications ranging from security-related
 applications, logistics support,  location-based services and that of helping handicapped or elderly people to live more independently, rate health levels and provide safety. With this knowledge from the model, this can be used to perform Ambient Assisted Living. 
 
 Many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, and increase the number of activities that can be understood, with the ultimate goal of providing a prediction of each and every activity that the person is doing. 
