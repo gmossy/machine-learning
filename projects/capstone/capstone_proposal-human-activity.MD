@@ -7,7 +7,7 @@ November 2, 2019
 ### Domain Background
 Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]
 Human Activity Recognition has a very wide applications ranging from security-related
-applications, logistics support,  location-based services and that of helping handicapped or elderly people to live more independently, rate health levels and provide safety. 
+applications, logistics support,  location-based services and that of helping handicapped or elderly people to live more independently, rate health levels and provide safety. With this knowledge from the model, this can be used to perform Ambient Assisted Living. 
 
 Many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, and increase the number of activities that can be understood, with the ultimate goal of providing a prediction of each and every activity that the person is doing. 
 
@@ -18,11 +18,7 @@ The topic of accelerometer-based activity recognition is not new  focused on how
 Other work has focused on the applications that can be built based on accelerometer-based activity recognition.
 
 
-My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development and Datacenter enterprise networking and automation that enables business processes, transforms networks and provides operations automation.  I am also an adjunct instruction at Frederick Community College teaching students how to program arduino microcontrollers and sensors to interact with the physical environment. 
-
-
-
-
+My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development and Datacenter enterprise networking and automation that enables business processes, transforms networks and provides operations automation.  I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severly disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program arduino microcontrollers and sensors to interact with the physical environment. 
 
 ### Problem Statement
 
