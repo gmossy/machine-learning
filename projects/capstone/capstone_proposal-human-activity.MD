@@ -40,6 +40,8 @@ Human activity recognition is the problem of classifying sequences of accelerome
 
 
 ### Datasets and Inputs 
+Kaggle dataset:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
+or
 https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
 or 
 https://acadgild.com/blog/4logistic-regression-case-study-2
