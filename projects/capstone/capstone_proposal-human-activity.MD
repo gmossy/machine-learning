@@ -9,8 +9,7 @@ Human activity recognition (HAR) plays an important role in people’s daily lif
 Human Activity Recognition has a very wide applications ranging from security-related
 applications, logistics support,  location-based services and that of helping handicapped or elderly people to live more independently, rate health levels and provide safety. 
 
-
-
+Many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, and increase the number of activities that can be understood, with the ultimate goal of providing a prediction of each and every activity that the person is doing. 
 
 Our work has a wide range of applications, including automatic customization of the mobile device’s behavior based upon a
 user’s activity (e.g., sending calls directly to voicemail if a user is jogging) and generating a daily/weekly activity profile to determine if a user is performing a healthy amount of exercise. 
@@ -41,6 +40,8 @@ Human activity recognition is the problem of classifying sequences of accelerome
 
 
 ### Datasets and Inputs 
+https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
+or 
 https://acadgild.com/blog/4logistic-regression-case-study-2
 
 This project uses the dataset “Activity Recognition from Single Chest-Mounted Accelerometer Data Set” was collected and made available by Casale, Pujol et al. from the University of Barcelona in Spain. It is freely available from the UCI Machine Learning repository:
