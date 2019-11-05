@@ -3,7 +3,7 @@
 Glenn Mossy 
 November 2, 2019
 
-## Proposal - A Machine Learning based malware detector
+## Proposal - A Deep Learning Based Human Activity Recognizer.
 ### Domain Background
 Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]
 
