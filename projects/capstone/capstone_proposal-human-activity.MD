@@ -1,52 +1,31 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
 Glenn Mossy 
-November 2, 2019
+November 6, 2019
 
-## Proposal - A Deep Learning Based Human Activity Recognizer.
+## Proposal - A Machine Learning Based Human Activity Recognizer.
 ### Domain Background
-Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]
+The goal of activity recognition is to recognize common human activities in real life settings. Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]  We seek to use novel data mining and machine learning techniques to model and then predict a wide range of human activities.  
 
-Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment. Recognition can be accomplished by exploiting the information retrieved from various sources
-such as body-worn sensors.
+Human Activity Recognition have a very wide applications ranging from security-related applications, logistics support, location-based services and that health applications by helping handicapped or elderly people to live more independently, rate health levels, activate household controls, appliances and provide safety. With this knowledge from the model, this can be used to perform Ambient Assisted Living.  HAR is very multifaceted, useful many fields and may be referred to as goal recognition, behavior recognition, location estimation and others. 
+
+Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment, and then model a wide range of human activities. Recognition can be accomplished by exploiting the information retrieved from various sources such as body-worn sensors.  It is believed that by empowering computer monitoring to monitor the behavior of agents then these computers would become suited to act on our behalf. 
  
+This project is based on sensor that are based on accelerometers, but many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide better models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.
 
-Human Activity Recognition have a very wide applications ranging from security-related
-applications, logistics support,  location-based services and that of helping handicapped or elderly people to live more independently, rate health levels and provide safety. With this knowledge from the model, this can be used to perform Ambient Assisted Living. 
-
-Many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, and increase the number of activities that can be understood, with the ultimate goal of providing a prediction of each and every activity that the person is doing. 
-
-Our work has a wide range of applications, including automatic customization of the mobile device’s behavior based upon a
-user’s activity (e.g., sending calls directly to voicemail if a user is jogging) and generating a daily/weekly activity profile to determine if a user is performing a healthy amount of exercise. 
-there are many useful applications that can be built if accelerometers can be used to recognize a user’s activity. For example, we can automatically monitor a user’s activity level and generate daily, weekly,
-The topic of accelerometer-based activity recognition is not new  focused on how one can use a variety of accelerometer based devices to identify a range of user activities [4-7, 9-16, 21].
-Other work has focused on the applications that can be built based on accelerometer-based activity recognition.
-
-
-My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development and Datacenter enterprise networking and automation that enables business processes, transforms networks and provides operations automation.  I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severly disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program arduino microcontrollers and sensors to interact with the physical environment. 
+My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development, enterprise networking and automation that enables business processes, and provides operations automation. I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severely disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program Arduino microcontrollers and sensors to interact with the physical environment. 
 
 ### Problem Statement
+Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a time series recording of their movement using sensors. In this project the sensors will be tri-axis accelerometers.  The idea is that once the subject’s activity is recognized and known, it can be saved in a model that can then be used to recognize future those activities with high accuracy when applied, and then provide useful assistance with the result. 
 
-Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a trace of their movement using sensors.  The idea is that once the subject’s activity is recognized and known, an intelligent computer system can then offer assistance.
-
-Movements are often normal indoor activities such as standing, sitting, jumping, and going up stairs. Sensors are often located on the subject such as a smartphone or vest and often record accelerometer data in three dimensions (x, y, z).
-
-In this paper we explore the results of the ability for a model to identify a user is performing—a task or activity they are doing by use of a sensor, the accelerometer, this is refered to as activity recognition. 
+Movements that we will study in this project will be normal indoor activities such as standing, sitting, jumping, and going up stairs. Sensors are often located on the subject such as a smartphone or vest and often record accelerometer data in three dimensions (x, y, z).
+In this project we explore the results of the ability for a model to identify a user is performing—a task or activity they are doing by use of a sensor, the accelerometer, this is referred to as activity recognition. 
 
 It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models.
 
 Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees. The difficulty is that this feature engineering requires deep expertise in the field.
 
-Human activity recognition is the problem of classifying sequences of accelerometer data recorded by specialized harnesses or smart phones into known well-defined movements.
-
-
-### Datasets and Inputs 
-Kaggle dataset:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
-or
-https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
-or 
-https://acadgild.com/blog/4logistic-regression-case-study-2
-
+### Datasets and Inputs
 This project uses the dataset “Activity Recognition from Single Chest-Mounted Accelerometer Data Set” was collected and made available by Casale, Pujol et al. from the University of Barcelona in Spain. It is freely available from the UCI Machine Learning repository:
 
 https://archive.ics.uci.edu/ml/datasets/Activity+Recognition+from+Single+Chest-Mounted+Accelerometer
@@ -74,14 +53,22 @@ Attribute Information:
 --- 6: Walking and Talking with Someone 
 --- 7: Talking while Standing
 
+
+Kaggle dataset:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
+or
+https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
+or 
+https://acadgild.com/blog/4logistic-regression-case-study-2
+
+
 ### Solution Statement
 Recently, deep learning methods such as recurrent neural networks and one-dimensional convolutional neural networks or CNNs have been shown to provide state-of-the-art results on challenging activity recognition tasks with little or no data feature engineering.
-The solution seeks to achieve very good results with classification accuracy of human activities recognition. 
-
+The solution seeks to achieve very good results with classification accuracy of human activities recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
 
 ### Benchmark Model
 A benchmark model is a threshold or goal that you're trying to beat with your solution. For most projects you should choose a simple model (something different than your solution). You'd train/test the benchmark model using the same data and conditions as your solution. This allows you to make a clear, objective comparison between the benchmark model and your solution.
 For example, a logistic regression model might be a good benchmark model for a classification problem.
+.....
 
 
 
@@ -89,8 +76,11 @@ For example, a logistic regression model might be a good benchmark model for a c
 The objective of this project is to predict the activity performed by the subject accurately, based on accelerometer readings, so, Validation Misclassification rate is chosen as the Assessment Measure to compare the performance of different models. 
 
 ### Project Design
-To develop an activity recognition model, we will make use of the accelerometer sensor data that was collected and labeled from twenty-nine users as they performed daily activities such as walking, jogging, climbing stairs, sitting, and standing.  
-This time series data was then aggregated into examples that summarize the user activity. We then used the resulting training data using supervised learning to induce a deep learning model for activity recognition.
+To develop an activity recognition model, we will make use of the tri-axial accelerometer sensor data that was collected and labeled from thirty users as they performed daily activities such as walking, jogging, climbing stairs, sitting, and standing.  
+This time series data was then aggregated into examples that summarize the user activity. Supervised learning will be used to train the data and validation methods will be used to create a models 
+
+
+The resulting training data will be usedusing supervised learning to induce a deep learning model for activity recognition.
 
 Human Activity Recognition
 2.	Problem Description
