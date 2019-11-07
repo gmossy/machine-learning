@@ -16,84 +16,57 @@ This project is based on sensor that are based on a body mounted accelerometer a
 My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development, enterprise networking and automation that enables business processes, and provides operations automation. I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severely disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program Arduino microcontrollers and sensors to interact with the physical environment. 
 
 ### Problem Statement
-Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a time series recording of their movement using sensors  The idea is that once the subject’s activity is recognized and known, it can be saved in a model that can then be used to recognize future those activities with high accuracy when applied, and then provide useful assistance with the result. 
+Human Activity Recognition or HAR for short, is the problem of predicting what a person is doing based on a time series recording of their movement using sensors. The idea is that once the subject’s activity is recognized and known, it can be saved in a model that can then be used to recognize future those activities with high accuracy when applied, and then provide useful assistance with the result. 
 
-Movements that we will study in this project will be normal indoor activities such as standing, sitting, and stair climbing. Sensors are body mounted and record accelerometer and gyroscopes data in three dimensions (x, y, z).
-In this project we explore the results of the ability for a model to identify a user is performing—a task or activity they are doing by use of a sensors, this is referred to as activity recognition. 
+Movements that we will study in this project will be normal indoor activities such as standing, sitting, and stair climbing. Sensors are body mounted and record accelerometer and gyroscope data in three dimensions (x, y, z).  The objective is to classify activities into one of the six activities performed.
 
 It is a challenging problem because there is no clear analytical way to relate the sensor data to specific actions in a general way. It is technically challenging because of the large volume of sensor data collected (e.g. tens or hundreds of observations per second) and the classical use of hand crafted features and heuristics from this data in developing predictive models.
-Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees. The difficulty is that this feature engineering requires deep expertise in the field.
+Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees or random forest methods.
 
 ### Datasets and Inputs
-This project uses the dataset “A Public Domain Dataset for Human Activity Recognition Using Smartphones" that was collected and made available by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz [1]. It is freely available from the UCI Machine Learning repository and from Kaggle:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
+This project uses the dataset “A Public Domain Dataset for Human Activity Recognition Using Smartphones" that was collected and made available by David Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz [1]. It is freely available from the UCI Machine Learning repository and from Kaggle:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
 
-The dataset is comprised of un-calibrated accelerometer data from 30 different subjects ages ranging from 19-48 years, each performing 6 activities. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the data captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.  The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+The dataset is comprised of un-calibrated accelerometer data from 30 different subjects ages ranging from 19-48 years, each performing 6 activities. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the data captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.  The obtained dataset has been randomly partitioned into two sets, "train.csv", where 70% of the volunteers was selected for generating the training data and 30% the test data "test.csv".
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
-Kaggle dataset:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
-or
-https://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions
-or 
-https://acadgild.com/blog/4logistic-regression-case-study-2
-
-
 ### Solution Statement
 Recently, deep learning methods such as recurrent neural networks and one-dimensional convolutional neural networks or CNNs have been shown to provide state-of-the-art results on challenging activity recognition tasks with little or no data feature engineering.
-The solution seeks to achieve very good results with classification accuracy of human activities recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
+The solution seeks to achieve very good results with classification accuracy of these human activities recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
 
 ### Benchmark Model
-A benchmark model is a threshold or goal that you're trying to beat with your solution. For most projects you should choose a simple model (something different than your solution). You'd train/test the benchmark model using the same data and conditions as your solution. This allows you to make a clear, objective comparison between the benchmark model and your solution.
-For example, a logistic regression model might be a good benchmark model for a classification problem.
-.....
-
-
+The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.
 
 ### Evaluation Metrics
 The objective of this project is to predict the activity performed by the subject accurately, based on accelerometer readings, so, Validation Misclassification rate is chosen as the Assessment Measure to compare the performance of different models. 
 
 ### Project Design
 To develop an activity recognition model, we will make use of the tri-axial accelerometer sensor data that was collected and labeled from thirty users as they performed daily activities such as walking, jogging, climbing stairs, sitting, and standing.  
-This time series data was then aggregated into examples that summarize the user activity. Supervised learning will be used to train the data and validation methods will be used to create a models 
-
-
-The resulting training data will be usedusing supervised learning to induce a deep learning model for activity recognition.
-
-Human Activity Recognition
-2.	Problem Description
-3.	Load Dataset
-4.	Plot Traces for a Single Subject
-5.	Plot Total Activity Durations
-6.	Plot Traces for Each Subject
-7.	Plot Histograms of Trace Observations
-8.	Approaches to Modeling the Problem
-- Our experiments first require us to collect the labeled raw accelerometer data and then transform that data into examples
-- we divided the data into 10-second segments and then generated features that were based on the 200 readings contained
-within each 10-second segment. 
-- Next we generated informative features based on the 200 raw accelerometer readings, where each reading contained an x, y, and z value corresponding to the three axes/dimensions 
-- which is subsequently used for training and testing
-
-The solution then proposes a convolutional neural network designed to take a
-
+This time series data was then aggregated into examples that summarize the user activity. Supervised learning will be used with the training data and validation methods will be used to create a models first beginning with the benchmark statiscal model, logistic regression.  
 The workflow for the solution is as follows:
 #### Collect
-1. Prepare training set and test set for malware and benign respectively
-2. Select features (which will be the printable strings) from datasets, and convert them to feature vectors
-#### Extract
-3. Provide a hashing function to tokenize or compress the strings, this will reduce the features. 
-4. Extract all the feature vectors. 
-5. Create a generator to break the data to be trained into batches. 
+1.	Problem Description
+2.	Load Datasets and prepar training set and test set
+- collect the labeled raw accelerometer and gyroscope data
 #### Explore
-6. Explore my data to show the distribution information of the dataset. Work will be done to classify the files into malware families
- using a classifier from sklearn such as DecisionTrees,RandomForestClassifier or SVM. 
-#### Train
-7. Decide on a classifier that will be used for the CNN.
-8. Split the data into Training and Test sets.
-9. Train the data and validate then and create and save the best model.
-#### Test
-10. Test the trained model.  First take and scan the Test data file, and collect it's features, get the feature vector, and then test the feature vector against the trained classifier model obtaining the class prediction.  The classifier outputs the class prediction {benign, malicious} of the test file. 
-#### Evaluate
-11. Finally, use the Test data results to evaluate the performance with a ROC curve. The raw classifier output (i.e., probability distribution) will be used to compute the average accuracy, false positive and false negative rate, and Receiver Operating Characteristic (ROC) graphs Score and compute and ROC Curve.
+- transform the data into examples and explore the data to show the distribution information of the dataset
+3.	Plot Traces for a Single Subject
+4.	Plot Total Activity Durations
+5.	Plot Traces for Each Subject
+6.	Plot Histograms of Trace Observations. 
+#### Extract Features
+7. Create a generator to break the data to be trained into batches. 
+8.	Determine Approaches to Modeling the Problem
+- divide the data into second segments and then generate features that were based on the readings.
+- generate informative features based on the 200 raw accelerometer readings, where each reading contains an x, y, and z value corresponding to the three axes/dimensions 
+#### Train and Classify with benchmark
+Work will be done to classify the activities using a classifier from sklearn such as logistic regression as a benchmark.
+9. Split the data into Training and Test sets.
+#### Improve the classification with an ANN
+The solution then proposes a Artificial neural network designed to take a
+10. design a classifier that will be used for the Artificial Neural Network (ANN).
+#### Test and Evaluate
+11. Finally, use the Test data results to evaluate the performance of the classifier output.
 
 **References:**
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
@@ -103,7 +76,6 @@ The workflow for the solution is as follows:
 [3] Mohammad Abu Alsheikh and Ahmed Selim and Dusit Niyato Linda Doyle and Shaowei Lin and Hwee-Pink Tan, Deep Activity Recognition Models with Triaxial Accelerometers, https://arxiv.org/abs/1511.04664, arXiv:1511.04664v2 [cs.LG],  25 Oct 2016 https://arxiv.org/pdf/1511.04664.pdf
 
 [4] Kwapisz J., Weiss G., Samuel A. Moore, S., Activity Recognition using Cell Phone Accelerometers, http://www.cis.fordham.edu/wisdm/includes/files/sensorKDD-2010.pdf, 2010
-
 
 **Links**
 https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
