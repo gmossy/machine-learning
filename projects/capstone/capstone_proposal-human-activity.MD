@@ -46,7 +46,7 @@ This time series data was then aggregated into examples that summarize the user 
 The workflow for the solution is as follows:
 #### Collect
 1.	Problem Description
-2.	Load Datasets and prepar training set and test set
+2.	Load Datasets and prepare training set and test set
 - collect the labeled raw accelerometer and gyroscope data
 #### Explore
 - transform the data into examples and explore the data to show the distribution information of the dataset
