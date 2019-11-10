@@ -5,13 +5,13 @@ November 6, 2019
 
 ## Proposal - A Machine Learning Based Human Activity Recognizer.
 ### Domain Background
-The goal of activity recognition is to recognize common human activities in real life settings. Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]  We seek to use novel data mining and machine learning techniques to model and then predict a wide range of human activities.  
+The goal of activity recognition is to recognize common human activities in real life settings. Human activity recognition (HAR) plays an important role in people’s daily life for its competence in learning profound high-level knowledge about human activity from raw sensor inputs. [1]  
 
-Human Activity Recognition have a very wide applications ranging from security-related applications, logistics support, location-based services and that health applications by helping handicapped or elderly people to live more independently, rate health levels, activate household controls, appliances and provide safety. With this knowledge from the model, this can be used to perform Ambient Assisted Living.  Better predicting human behavior means we can proactively deliver specilized programs and targeted interventions to the populations that are most in need. HAR is very multifaceted, useful many fields and may be referred to as goal recognition, behavior recognition, location estimation and others. 
+Human Activity Recognitions appealing applications ranging from security-related applications, logistics support, location-based services and exploitation of Ambient Intelligence (AmI) by helping handicapped or elderly people to live more independently, rate health levels, activate household controls, appliances and provide safety. With knowledge from the model, results can be used to perform Ambient Assisted Living.  Better predicting of human behavior means we can proactively deliver specilized programs and targeted interventions to the populations that are most in need. HAR is very multifaceted, useful many fields and may be referred to as goal recognition, behavior recognition, location estimation, etc. 
 
 Human Activity Recognition aims to identify the actions carried out by a person provided by a set of observations from the person's movements and surrounding environment, and then model a wide range of human activities. Recognition can be accomplished by exploiting the information retrieved from various sources such as body-worn sensors.  It is believed that by empowering computer monitoring to monitor the behavior of agents then these computers would become and suited to act on our behalf. 
  
-This project is based on sensor that are based on a body mounted accelerometer and gyroscope but many additional sensors, such as microphones, motion video capture, human vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide better models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.
+This project is based on sensor that are based on a body mounted accelerometer and gyroscope but many additional sensors, such as microphones, motion video capture, human physiological signals or vital signs could be later added to this project in order to capture data to provide features to the model that would improve the accuracy, provide better models, and increase the number of activities that can be understood, with the ultimate goal of providing a real-time prediction of each and every activity that the person is doing.
 
 My interest in this field stems from my work with AT&T Public sector where I am a Senior Solutions Architect providing technical leadership on Technology Innovation initiatives for our Nations Department of Defense, DISA, Army and Cyber programs.  In this role I support multi-vendor, high risk/reward integration projects, including rapid software development, enterprise networking and automation that enables business processes, and provides operations automation. I have participated in AT&T Software Symposium Hackathons in which the project was to provide assisted living support to wheelchair bound, severely disabled patients.  I am also an adjunct instruction at Frederick Community College teaching students how to program Arduino microcontrollers and sensors to interact with the physical environment. 
 
@@ -30,7 +30,7 @@ The dataset is comprised of un-calibrated accelerometer data from 30 different s
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
-####For each record in the dataset the following is provided:
+For each record in the dataset the following is provided:
 
      -Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 
@@ -43,45 +43,55 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
      -An identifier of the subject who carried out the experiment.
 
 ### Solution Statement
-Recently, deep learning methods such as recurrent neural networks and one-dimensional convolutional neural networks or CNNs have been shown to provide state-of-the-art results on challenging activity recognition tasks with little or no data feature engineering.
-The solution seeks to achieve very good results with classification accuracy of these human activities recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
+The solution is a classification model capable of predicting the human activity recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
 
 ### Benchmark Model
 The benchmark model that will be used will be a logistic regression model for a classification to develop a baseline activity recognition model.
 
 ### Evaluation Metrics
-The objective of this project is to predict the activity performed by the subject accurately, based on accelerometer readings, so, Validation Misclassification rate is chosen as the Assessment Measure to compare the performance of different models. 
+The objective of this project is to predict the activity performed by the subject accurately, based on accelerometer and gyroscope readings, so misclassification rate is chosen as the assessment measure to compare the performance of different models. 
 
 ### Project Design
-To develop an activity recognition model, we will make use of the tri-axial accelerometer sensor data that was collected and labeled from thirty users as they performed daily activities such as walking, jogging, climbing stairs, sitting, and standing.  
-This time series data was then aggregated into examples that summarize the user activity. Supervised learning will be used with the training data and validation methods will be used to create a models first beginning with the benchmark statiscal model, logistic regression.  
+To develop an activity recognition model, we will make use of the  sensor data that will first be aggregated into examples that summarize the user activity. Supervised learning will be used with the training data and validation methods will be used to create a models first beginning with the benchmark statiscal model, logistic regression.  Results will be evaluted and attempts to improve the accuracy will be shown. 
+Programming language: Python 3.6
+Library: Pandas, Numpy, Scikit-learn, various classifiers.
+
 The workflow for the solution is as follows:
 #### Collect
 1.	Problem Description
 2.	Load Datasets and prepare training set and test set
 - collect the labeled raw accelerometer and gyroscope data
 #### Explore
-- transform the data into examples and explore the data to show the distribution information of the dataset
+- Establish the basic understanding of the dataset, perform basic cleaning and processing, transform the data into examples and explore the data to show the distribution information of the dataset
 3.	Plot Traces for a Single Subject
 4.	Plot Total Activity Durations
 5.	Plot Traces for Each Subject
-6.	Plot Histograms of Trace Observations. 
+6.	Plot Histograms of Trace Observations.
+7. Determine how to calibrate the data. 
 #### Extract Features
+- Devise new features based on the given features, some intuitions. 
 7. Create a generator to break the data to be trained into batches. 
 8.	Determine Approaches to Modeling the Problem
 - divide the data into second segments and then generate features that were based on the readings.
-- generate informative features based on the 200 raw accelerometer readings, where each reading contains an x, y, and z value corresponding to the three axes/dimensions 
 #### Train and Classify with benchmark
-Work will be done to classify the activities using a classifier from sklearn such as logistic regression as a benchmark.
+Work will be done to classify the activities using a classifier from sklearn such as logistic regression as a benchmark and fine tune the model's hyperparameters. 
 9. Split the data into Training and Test sets.
+
 #### Improve the classification with an ANN
 The solution then proposes a Artificial neural network designed to take a
 10. design a classifier that will be used for the Artificial Neural Network (ANN).
+
 #### Test and Evaluate
 11. Finally, use the Test data results to evaluate the performance of the classifier output.
+The goal is to show a comparison with the traditional classification models to an ANN, and understanding any improvements in terms of computational costs while maintaining similar accuracy.
 
 **References:**
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 
+
+
+
+
+21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 
 [2] Jindong Wang, Yiqiang Chen, Shuji Hao, Xiaohui Peng, Lisha Hu, Deep Learning for Sensor-based Activity Recognition: A Survey, https://arxiv.org/abs/1707.03502, arXiv:1707.03502v2 [cs.CV],  14 Dec 2017
 
