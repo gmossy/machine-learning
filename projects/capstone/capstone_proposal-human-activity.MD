@@ -74,7 +74,7 @@ The workflow for the solution is as follows:
 8.	Determine Approaches to Modeling the Problem
 - divide the data into second segments and then generate features that were based on the readings.
 #### Train and Classify with benchmark
-Work will be done to classify the activities using a classifier from sklearn such as logistic regression as a benchmark and fine tune the model's hyperparameters. 
+- Work will be done to classify the activities using a classifier from sklearn such as logistic regression as a benchmark and fine tune the model's hyperparameters. 
 9. Split the data into Training and Test sets.
 
 #### Improve the classification with an ANN
@@ -86,12 +86,7 @@ The solution then proposes a Artificial neural network designed to take a
 The goal is to show a comparison with the traditional classification models to an ANN, and understanding any improvements in terms of computational costs while maintaining similar accuracy.
 
 **References:**
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 
-
-
-
-
-21st European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 [2] Jindong Wang, Yiqiang Chen, Shuji Hao, Xiaohui Peng, Lisha Hu, Deep Learning for Sensor-based Activity Recognition: A Survey, https://arxiv.org/abs/1707.03502, arXiv:1707.03502v2 [cs.CV],  14 Dec 2017
 
