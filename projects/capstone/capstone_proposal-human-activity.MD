@@ -30,6 +30,18 @@ The dataset is comprised of un-calibrated accelerometer data from 30 different s
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
+####For each record in the dataset the following is provided:
+
+     -Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+
+     -Triaxial Angular velocity from the gyroscope.
+
+     -A 561-feature vector with time and frequency domain variables.
+
+     -Its activity label.
+
+     -An identifier of the subject who carried out the experiment.
+
 ### Solution Statement
 Recently, deep learning methods such as recurrent neural networks and one-dimensional convolutional neural networks or CNNs have been shown to provide state-of-the-art results on challenging activity recognition tasks with little or no data feature engineering.
 The solution seeks to achieve very good results with classification accuracy of these human activities recognition first using traditional supervised learning models using classification algorithms such as logistic regression, random forests, support vector machines, then trying an artificial neural network (ANN). Models will be built and then used to infer the activity from test data.  The accuracy will be evaluated. 
