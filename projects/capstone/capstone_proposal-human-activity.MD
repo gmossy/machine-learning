@@ -24,7 +24,7 @@ It is a challenging problem because there is no clear analytical way to relate t
 Classical approaches to the problem involve hand crafting features from the time series data based on fixed-size windows and training machine learning models, such as ensembles of decision trees or random forest methods.
 
 ### Datasets and Inputs
-This project uses the dataset “A Public Domain Dataset for Human Activity Recognition Using Smartphones" that was collected and made available by David Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz [1]. It is freely available from the UCI Machine Learning repository and from Kaggle:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
+This project uses the dataset “A Public Domain Dataset for Human Activity Recognition Using Smartphones" that was collected and made available by David Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz [1]. It is freely available from the UCI Machine Learning repository https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones and from Kaggle:  https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
 
 The dataset is comprised of un-calibrated accelerometer data from 30 different subjects ages ranging from 19-48 years, each performing 6 activities. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the data captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.  The obtained dataset has been randomly partitioned into two sets, "train.csv", where 70% of the volunteers was selected for generating the training data and 30% the test data "test.csv".
 
@@ -52,7 +52,7 @@ The benchmark model that will be used will be a logistic regression model for a 
 The objective of this project is to predict the activity performed by the subject accurately, based on accelerometer and gyroscope readings, so misclassification rate is chosen as the assessment measure to compare the performance of different models. 
 
 ### Project Design
-To develop an activity recognition model, we will make use of the  sensor data that will first be aggregated into examples that summarize the user activity. Supervised learning will be used with the training data and validation methods will be used to create a models first beginning with the benchmark statiscal model, logistic regression.  Results will be evaluted and attempts to improve the accuracy will be shown. 
+To develop an activity recognition model, we will make use of the  sensor data that will first be aggregated into examples that summarize the user activity. Supervised learning will be used with the training data and validation methods will be used to create a models first beginning with the benchmark statiscal model, logistic regression.  The results will be to accurately classify 6 different activity types: walking, walking upstairs, walking downstairs, sitting, standing, and laying.
 Programming language: Python 3.6
 Library: Pandas, Numpy, Scikit-learn, various classifiers.
 
@@ -85,8 +85,8 @@ The solution then proposes a Artificial neural network designed to take a
 11. Finally, use the Test data results to evaluate the performance of the classifier output.
 The goal is to show a comparison with the traditional classification models to an ANN, and understanding any improvements in terms of computational costs while maintaining similar accuracy.
 
-**References:**
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
+**Acknowledgements and References:**
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. https://www.neuraldesigner.com/learning/examples/activity-recognition, 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 [2] Jindong Wang, Yiqiang Chen, Shuji Hao, Xiaohui Peng, Lisha Hu, Deep Learning for Sensor-based Activity Recognition: A Survey, https://arxiv.org/abs/1707.03502, arXiv:1707.03502v2 [cs.CV],  14 Dec 2017
 
@@ -94,5 +94,13 @@ The goal is to show a comparison with the traditional classification models to a
 
 [4] Kwapisz J., Weiss G., Samuel A. Moore, S., Activity Recognition using Cell Phone Accelerometers, http://www.cis.fordham.edu/wisdm/includes/files/sensorKDD-2010.pdf, 2010
 
+[5] Calatroni, Alberto; Roggen, Daniel; Tröster, Gerhard, A methodology to use unknown new sensors for activity
+recognition by leveraging sporadic interactions with primitive sensors and behavioral assumptions,
+https://doi.org/10.3929/ethz-a-006286309, 2010
+
+
 **Links**
 https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones
+https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
+https://www.neuraldesigner.com/learning/examples/activity-recognition
+https://www.youtube.com/watch?v=XOEN9W05_4A
